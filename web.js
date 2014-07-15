@@ -7,6 +7,7 @@ var app = express(logger);
 var fs = require('fs');
 
 app.get('/', function(request, response) {
+  console.log(request.toString());
   response.send(fs.readFileSync('agile_inputs.html','utf8',function(err,data) {
     if(err) throw err;
     console.log(data);
