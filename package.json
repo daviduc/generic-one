@@ -1,0 +1,25 @@
+{
+  "name": "generic-one",
+  "version": "0.0.1",
+  "description": "generic-one",
+  "main": "agile_inputs.html",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified.\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "\"https://github.com/daviduc/generic-one.git\""
+  },
+  "keywords": [
+    "\"generic-one\""
+  ],
+  "author": "\"david cho\"",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.6.1",
+    "jquery": "^2.1.1",
+    "logfmt": "^1.1.2",
+    "morgan": "^1.1.1",
+    "node-couchdb": "^0.1.3"
+  }
+}
