@@ -1,95 +1,7 @@
-div#notifcation_area     
-{
-    color: #555;    
-    border-radius: 10px;    
-    font-family: Tahoma, Geneva, Arial, sans-serif; 
-    font-size: 11px;    
-    padding: 10px 36px;    
-    margin: 10px;    
-}
-
-div#notification_area span 
-{    
-    font-weight: bold;    
-    text-transform: uppercase;
-}
-
-html 
+﻿html 
 {
     margin: 0; 
     padding: 0;
-}
-
-.tabs a 
-{    
-    cursor: pointer;    
-    padding: 5px;    
-    background: #9f9f9f;    
-    color: #ffffff;    
-    border: 1px solid #666;    
-    border-botton: 0;
-}
-
-.tabs a:hover, .tabs a.active 
-{    
-    background: #666;    
-    color: #fff;
-}
-
-.tabContent 
-{    
-    border: 1px solid #aaa;    
-    margin: 4px 0;    
-    padding: 5px;
-}
-
-.well 
-{ 
-    position: relative;	
-    overflow: hidden;
-}
-
-fieldset 
-{ 
-    float: left;	   
-    display: block;	   
-    border-color: rgb(95%,95%,95%);
-}
-
-legend 
-{
-    font-style:italic;	
-    color: rgb(95%,95%,95%);
-}
- 
-input.dates 
-{
-    width: 145px;
-}
-
-input#post 
-{
-    margin:2em 0em 0em 0em;
-}
-
-button#get 
-{
-    margin: 2em 0em 0em 0em;
-}
- 
-input.hours 
-{
-    width: 30px;
-}
-
-input.pcomp 
-{
-    width: 38px;
-}
-
-input#srcfile 
-{
-    width: 80px;
 }
 
 body 
@@ -168,33 +80,33 @@ div.logo
     margin: 3em;
 }
 
-div.task_update 
-{ 
-    background: rgb(80%,80%,90%); 
+.tabs a 
+{    
+    cursor: pointer;    
+    padding: 5px;    
+    background: #9f9f9f;    
+    color: #ffffff;    
+    border: 1px solid #666;    
+    border-botton: 0;
 }
 
-div#pending_changes 
-{
-    background: #ffffff;
+.tabs a:hover, .tabs a.active 
+{    
+    background: #666;    
+    color: #fff;
 }
 
-div#revert_list  
-{
-    background: #ffffff;
-}
-div#entry 
-{
-    margin: 0 25% 1em 7%; 
-    padding: 0;
+.tabContent 
+{    
+    border: 1px solid #aaa;    
+    margin: 4px 0;    
+    padding: 5px;
 }
 
-div#sidebar 
+legend 
 {
-    position: absolute; 
-    top: 1em; 
-    right: 0; 
-    width: 20%; 
-    font-size: 11px;
+    font-style:italic;	
+    color: rgb(95%,95%,95%);
 }
 
 div#sidebar a 
@@ -258,14 +170,76 @@ div.choosen
 
 div.none { }
 
-p.actionitem 
+h2.sec_hdr  
 {
-    color:red; 
-    font-size:2em;
+    margin: 0% 0% 0% 0%;	       
+    border-bottom: 2px groove rgb(95%,95%,95%);	       
+    color: rgb(50%,50%,35%);	       
+    padding-top: 30px;	       
+    padding-bottom: 10px;
 }
-    
+
+div.logo 
+{
+    margin: 3em;
+}
+div.links     
+{
+    background: green;  
+}
+
+div.box  
+{
+    border: solid; 
+    border-width: thin; 
+    width: 96%;          
+    background: rgb(211, 211, 211);  
+}
+
+div.news  
+{
+    border: solid; 
+    border-width: thin; 
+    width: 96%;	   
+    border-bottom: 3px solid black;	   
+    margin: 18px 5px 2px 10px;           
+    background: rgb(211, 211, 211)  
+}
+
+div.man 
+{
+     border: solid; 
+     border-width: 
+     thin; width: 100%;          
+     font-size: 90%;          
+     margin : 4;          
+     background: rgb(211,211,211)  
+}
+
+div.choosen 
+{
+    border: solid; 
+    border-width: thin;	     
+    background: rgb(231, 231, 231)  
+}
+
+div#sidebar 
+{
+    position: absolute; 
+    top: 1em; 
+    right: 0; 
+    width: 20%; 
+    font-size: 11px;
+}
+
+
 I        
 {
     font-size : 12px;          
     font-family: Times, Verdana, Arial, Helvetica, sans-serif;
+}
+
+div#pending_area 
+{
+    background: #ffffff;
 }
