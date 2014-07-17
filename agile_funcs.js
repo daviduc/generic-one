@@ -336,4 +336,4 @@ function init_form() {
 	$("#stdout").css("position","fixed").css("top","50%").css("left","50%").css("z-index","100").css("display","none");
 	spin_target=document.getElementById("stdout");    
 	spinner = new Spinner(opts).spin(spin_target);
-}
+}l

@@ -16,6 +16,7 @@
   "author": "\"david cho\"",
   "license": "ISC",
   "dependencies": {
+    "connect": "^3.0.2",
     "express": "^4.6.1",
     "jquery": "^2.1.1",
     "logfmt": "^1.1.2",
