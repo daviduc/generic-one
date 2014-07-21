@@ -20,6 +20,7 @@
     "express": "^4.6.1",
     "jquery": "^2.1.1",
     "logfmt": "^1.1.2",
+    "mongodb": "^1.4.7",
     "morgan": "^1.1.1",
     "node-couchdb": "^0.1.3"
   }
