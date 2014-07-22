@@ -10,7 +10,13 @@ var fs = require('fs');
 var mongo = require('mongodb');
 var mongo_client = mongo.MongoClient;
 
-mongo_client.connect(process.env.MONGOHQ_URL, function(err, db) {
+app.get('/', function(request, response) {
+  console.log("TRACE1");
+  console.log(request.headers);
+  console.log(request.method);
+  console.log(request.url);
+  console.log(require('url').parse(request.url));
+  mongo_client.connect(process.env.MONGOHQ_URL, function(err, db) {
 	  // operate on the collection named "test"
 	  var collection = db.collection('test')
 	 
@@ -39,32 +45,14 @@ mongo_client.connect(process.env.MONGOHQ_URL, function(err, db) {
 	      })
 	    })
 	  })
+	  response.send(fs.readFileSync('kwyk1.html','utf8',function(err,data) {
+		    if(err) throw err;
+		    console.log(data);
+	  }));
 	})
 
-
-app.get('/', function(request, response) {
-  console.log("TRACE1");
-  console.log(request.headers);
-  console.log(request.method);
-  console.log(request.url);
-  console.log(require('url').parse(request.url));
-  response.send(fs.readFileSync('kwyk1.html','utf8',function(err,data) {
-    if(err) throw err;
-    console.log(data);
-  }));
 });
 
-app.get('/agile_inputs.html', function(request,response) {
-  console.log("TRACE2");
-  console.log(request.headers);
-  console.log(request.method);
-  console.log(request.url);
-  console.log(require('url').parse(request.url));
-  response.send(fs.readFileSync('agile_inputs.html','utf8',function(err,data) {
-    if(err) throw err;
-    console.log(data);
-  }));
-});
 
 app.get('/kwyk1.css',function(request,response) { 
   console.log('requesting kwyk1.css');

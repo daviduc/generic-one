@@ -11,6 +11,10 @@
     <script type="text/javascript" src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.50/jquery.form.js"></script>
     <script type="text/javascript" src="kwyk1.js"></script>
+    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+      api_key: 75a5y24lclxs6m
+      onLoad: onLoadProfile
+    </script>  
     <script type="text/javascript">        $(document).ready(function () { $(".tabs a").html5jTabs(); });</script>  
 </head>
 <body>
@@ -20,13 +24,16 @@
     </div>  
     <div class="tabContent">   
         <div id="jobs">
-        TBD jobs content
+          <script type="in/Login"> Hello, member with id <?js=id ?> : <?js=firstName ?> <?js=lastName ?>. </script>
         </div>
+        <div id="jobs_profile_data">
+	    
+	</div>
         <div id="sales">
         TBD sales content
         </div>
-        <div id="sidebar"><h4> pending area </h4><br>
-            <div id ="pending_area"></div>
+        <div id="jobs_sidebar"><h4> pending area </h4><br>
+            <div id ="jobs_pending_area"></div>
         </div>  
 
     </div>    
