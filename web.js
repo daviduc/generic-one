@@ -10,6 +10,29 @@ var fs = require('fs');
 var mongo = require('mongodb');
 var mongo_client = mongo.MongoClient;
 
+app.use( function (request, response,next) {
+    regex_lib_js = /^\/lib.+\.js/;
+    regex_js = /.+\.js/;
+    regex_css = /.+\.css/;
+    console.log(request.url);
+    if (request.method == "GET" & regex_lib_js.test(request.url)) {
+        response.writeHead(200, { 'Content-Type': 'text/javascript' });
+        response.write(fs.readFileSync('.' + request.url, 'utf8'));
+        response.end();    
+    }
+    if (request.method == "GET" & regex_css.test(request.url)) {
+        response.writeHead(200, { 'Content-Type': 'text/css' });
+        response.write(fs.readFileSync('.' + request.url, 'utf8'));
+        response.end();
+    }
+    if (request.method == "GET" & regex_js.test(request.url)) {
+        response.writeHead(200, { 'Content-Type': 'text/javascript' });
+        response.write(fs.readFileSync('.' + request.url, 'utf8'));
+        response.end();
+    }
+    next();
+});
+
 app.get('/', function(request, response) {
   console.log("TRACE1");
   console.log(request.headers);
@@ -54,28 +77,9 @@ app.get('/', function(request, response) {
 });
 
 
-app.get('/kwyk1.css',function(request,response) { 
-  console.log('requesting kwyk1.css');
-  console.log(request.headers);
-  console.log(request.method);
-  console.log(request.url);
-  console.log(require('url').parse(request.url));
-  response.writeHead(200, {'Content-Type':'text/css'});
-  response.write(fs.readFileSync('kwyk1.css','utf8'));
-  response.end();
 
-});
 
-app.get('/kwyk1.js',function(request,response) { 
-  console.log('requesting kwyk1.js');
-  console.log(request.headers);
-  console.log(request.method);
-  console.log(request.url);
-  console.log(require('url').parse(request.url));
-  response.writeHead(200,{'Content-Type':'text/javascript'});
-  response.write(fs.readFileSync('kwyk1.js','utf8'));
-  response.end();
-});
+
 
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
