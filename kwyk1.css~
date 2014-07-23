@@ -109,7 +109,7 @@ legend
     color: rgb(95%,95%,95%);
 }
 
-div#jobs_sidebar a 
+div#sidebar a 
 {
     display: block; 
     padding: 8px 0 2px 10px; 
@@ -117,7 +117,7 @@ div#jobs_sidebar a
     border-left: 1px solid rgb(50%,50%,35%);
 }
 
-div#jobs_sidebar a:hover 
+div#sidebar a:hover 
 {
     background: rgb(100,100,100);
 }
@@ -223,7 +223,7 @@ div.choosen
     background: rgb(231, 231, 231)  
 }
 
-div#jobs_sidebar 
+div#sidebar 
 {
     position: absolute; 
     top: 1em; 
@@ -239,15 +239,7 @@ I
     font-family: Times, Verdana, Arial, Helvetica, sans-serif;
 }
 
-div#jobs_pending_area 
+div#pending_area 
 {
     background: #ffffff;
-}
-
-p#p2nd
-{
-	padding-left: 7px;
-	margin-bottom: 0px;
-	magin-top:0px;
-}
 }
