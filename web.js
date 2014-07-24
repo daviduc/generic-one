@@ -14,22 +14,34 @@ app.use( function (request, response,next) {
     regex_lib_js = /^\/lib.+\.js/;
     regex_js = /.+\.js/;
     regex_css = /.+\.css/;
+    regex_html = /.+\.html/;
+    
     console.log(request.url);
-    if (request.method == "GET" & regex_lib_js.test(request.url)) {
-        response.writeHead(200, { 'Content-Type': 'text/javascript' });
-        response.write(fs.readFileSync('.' + request.url, 'utf8'));
-        response.end();    
-    }
-    if (request.method == "GET" & regex_css.test(request.url)) {
-        response.writeHead(200, { 'Content-Type': 'text/css' });
-        response.write(fs.readFileSync('.' + request.url, 'utf8'));
+    if (request.method == "GET" && regex_lib_js.test(request.url)) {
+        response.write(fs.readFileSync('.' + request.url, 'utf8', function (err, data) {
+            if (err) console.log(err);
+            response.writeHead(200, { 'Content-Type': 'text/javascript' });
+        }));
         response.end();
-    }
-    if (request.method == "GET" & regex_js.test(request.url)) {
-        response.writeHead(200, { 'Content-Type': 'text/javascript' });
-        response.write(fs.readFileSync('.' + request.url, 'utf8'));
+    } else if (request.method == "GET" && regex_css.test(request.url)) {
+        response.write(fs.readFileSync('.' + request.url, 'utf8', function (err, data) {
+            if (err) console.log(err);
+            response.writeHead(200, { 'Content-Type': 'text/css' });
+        }));
         response.end();
+    } else if (request.method == "GET" && regex_js.test(request.url)) {
+        response.write(fs.readFileSync('.' + request.url, 'utf8', function (err, data) {
+            if (err) console.log(err);
+            response.writeHead(200, { 'Content-Type': 'text/javascript' });
+        }));
+        response.end();
+    } else if (request.method == "GET" && (request.url == '/' || regex_html.test(request.url))) {
+        response.send(fs.readFileSync('kwyk1.html', 'utf8', function (err, data) {
+            if (err) throw err;
+            console.log(data);
+        }));
     }
+    
     next();
 });
 
@@ -68,10 +80,6 @@ app.get('/', function(request, response) {
 	      })
 	    })
 	  })
-	  response.send(fs.readFileSync('kwyk1.html','utf8',function(err,data) {
-		    if(err) throw err;
-		    console.log(data);
-	  }));
 	})
 
 });
