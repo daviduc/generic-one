@@ -31,7 +31,7 @@ app.use( function (request, response,next) {
 	  if(err) console.log(err);
 	  response.writeHead(200, {'Content-Type':'text/javascript'});}));
         response.end();
-    } else if (request.method == "GET" && ( request.url == '/' || regex_html(request.url) )) {
+    } else if (request.method == "GET" && ( request.url == '/' || regex_html.test(request.url) )) {
 	response.send(fs.readFileSync('kwyk1.html','utf8',function(err,data) {
 	    if(err) throw err;
 	    console.log(data);
